@@ -1,0 +1,76 @@
+<mvc:View controllerName="sap.training.controller.Datatypes" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.ui.commons">
+	
+	<f:SimpleForm>
+	    <f:title>
+	        <core:Title text="Company Data" />
+	    </f:title>
+		<f:content>
+		    <Label text="Number of Employees"/>
+            <TextField  id="myNumOfEmployeesField"
+                        value="{ path: '/company/numOfEmployees',
+                                 type: 'sap.ui.model.type.Integer',
+                                 formatOptions: {groupingEnabled: true, groupingSeparator: '.'},
+                                 constraints: {minimum: 1, maximum: 5000000}
+                                }"
+            />
+            <!--
+            <TextField  id="myNumOfEmployeesField"
+                        value="{ path: '/company/numOfEmployees',
+                                 type: 'sap.ui.model.type.Integer',
+                                 formatOptions: {groupingEnabled: true, groupingSeparator: '.'},
+                                 constraints: {minimum: 1, maximum: 5000000}
+                                }"
+                        parseError="onInputError"
+                        validationError="onInputError"
+                        validationSuccess="onValidationSuccess"
+            />
+            <TextView id="myTextView" text="" design="Bold" semanticColor="Critical"/>
+            -->
+	                
+	   </f:content>
+	</f:SimpleForm>
+	 
+	<f:SimpleForm>
+	    <f:title>
+	        <core:Title text="Employee Data" />
+	    </f:title>
+		<f:content>
+		    <Label text="Date of Birth" />
+            <TextField id="myDOBField"
+                    value="{path: '/employee/birthday',
+                            type: 'sap.ui.model.type.Date',
+                            formatOptions: { source: {pattern: 'yyyy/MM/dd'}, style: 'medium' }
+                            }"
+            />
+	       <Label text="Salary Level"/>
+		   <TextField id="mySalaryLevelField"
+	                value="{ path: '/employee/salaryLevel',
+	                type: 'sap.ui.model.type.Integer',
+	                constraints: {minimum: 1, maximum: 5}
+	                }"/>
+	                
+            <Label text="Department"/>
+            <TextField id="myDepartmentField"
+                    value="{ path: '/employee/department',
+                    type: 'sap.ui.model.type.String',
+                    constraints: {minLength : 1, maxLength : 20}
+                    }"/>
+		
+	        <Label text="Salary"/>
+            <TextField id="mySalaryField"
+                    value="{ path: '/employee/salary',
+                    type: 'sap.ui.model.type.Float',
+                    formatOptions: {minFractionDigits: 2, maxFractionDigits: 2},
+                    constraints: {minimum: 0}
+                    }"/>
+                 
+            <Label text="Zip code"/>
+            <TextField id="myZipCodeField"
+                    value="{ path: '/employee/zipCode',
+                             type: 'sap.training.type.ZipCode' }"
+            />     
+	   </f:content>
+	</f:SimpleForm>
+	
+</mvc:View>
