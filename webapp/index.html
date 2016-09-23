@@ -23,12 +23,14 @@
 			oModel.loadData("json/data.json");
 			sap.ui.getCore().setModel(oModel);
 				
-			var view =	sap.ui.view({
+			var oView =	sap.ui.view({
 							id: "idMain",
 							viewName: "sap.training.view.Datatypes",
 							type: sap.ui.core.mvc.ViewType.XML
 						});
-			view.placeAt("content");
+			// Register the view with the message manager
+			//sap.ui.getCore().getMessageManager().registerObject(oView, true);
+			oView.placeAt("content");
 		</script>
 	</head>
 
