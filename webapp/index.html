@@ -9,9 +9,8 @@
 
 		<script id="sap-ui-bootstrap"
 			src="../../resources/sap-ui-core.js"
-			data-sap-ui-libs="sap.ui.commons, sap.m"
-			data-sap-ui-theme="sap_bluecrystal"
-			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize"
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-resourceroots='{"sap.training": ""}'>
 		</script>
@@ -20,7 +19,7 @@
 
 		<script>
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("json/data.json");
+			oModel.loadData("model/data.json");
 			sap.ui.getCore().setModel(oModel);
 				
 			var oView =	sap.ui.view({
@@ -28,8 +27,10 @@
 							viewName: "sap.training.view.Datatypes",
 							type: sap.ui.core.mvc.ViewType.XML
 						});
+						
 			// Register the view with the message manager
 			//sap.ui.getCore().getMessageManager().registerObject(oView, true);
+			
 			oView.placeAt("content");
 		</script>
 	</head>

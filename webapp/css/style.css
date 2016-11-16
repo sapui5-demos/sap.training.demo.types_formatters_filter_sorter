@@ -1,1 +1,6 @@
 /* Enter your custom styles here */
+
+.myMessageText {
+  font-weight: bold;
+  color: red;
+}

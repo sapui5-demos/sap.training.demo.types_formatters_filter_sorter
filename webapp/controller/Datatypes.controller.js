@@ -1,12 +1,16 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
+	"sap/ui/Device",
 	"sap/training/type/ZipCode"
-], function(Controller) {
+], function(Controller, Device) {
 	"use strict";
 
 	return Controller.extend("sap.training.controller.Datatypes", {
 
 		onInit: function() {
+
+			// apply compact density if touch is not supported, the standard cozy design otherwise
+			this.getView().addStyleClass(Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact");
 
 			// var oCore = sap.ui.getCore();
 
@@ -15,8 +19,8 @@ sap.ui.define([
 			// oCore.attachValidationError(this.onError);
 
 			// oCore.attachValidationSuccess(function(oEvent) {
-			// 	var oElement = oEvent.getParameter("element");
-			// 	oElement.setValueState(sap.ui.core.ValueState.None);
+			// 	 var oElement = oEvent.getParameter("element");
+			// 	 oElement.setValueState(sap.ui.core.ValueState.None);
 			// });
 		},
 
@@ -30,22 +34,20 @@ sap.ui.define([
 		},
 
 		onInputError: function(oEvent) {
-
 			oEvent.oSource.setValueState(sap.ui.core.ValueState.Error);
 
 			var oException = oEvent.getParameter("exception");
-			var oTextView = this.getView().byId("myTextView");
-			oTextView.setText(oException.message);
+			var oText = this.getView().byId("idMessageText");
+			oText.setText(oException.message);
 
 			oEvent.bCancelBubble = true;
 		},
 
 		onValidationSuccess: function(oEvent) {
-
 			oEvent.oSource.setValueState(sap.ui.core.ValueState.None);
 
-			var oTextView = this.getView().byId("myTextView");
-			oTextView.setText("");
+			var oText = this.getView().byId("idMessageText");
+			oText.setText("");
 		}
 
 	});
