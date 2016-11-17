@@ -1,47 +1,55 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.training.controller.Device_Model"
-	xmlns:t="sap.ui.table" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Panel headerText="Employees" expandable="{= !${device>/system/desktop} }" expanded="{device>/system/desktop}">
-		<content>
-			<t:Table rows="{/employees}" visibleRowCount="20">
-				<t:columns>
-					<t:Column >
-						<t:label><Label text="Name"/></t:label>
-						<t:template>
-							<Text text="{name}"/>
-						</t:template>
-					</t:Column>
-					<t:Column>
-						<t:label><Label text="Date of Birth"/></t:label>
-						<t:template>
-							<Text text="{ path: 'birthday', type: 'sap.ui.model.type.Date', formatOptions: { source: {pattern: 'yyyy/MM/dd'}, style: 'medium' }}"/>
-						</t:template>
-					</t:Column>
-					<t:Column>
-						<t:label><Label text="Gender"/></t:label>
-						<t:template>
-							<Text text="{gender}"/>
-						</t:template>
-					</t:Column>
-					<t:Column>
-						<t:label><Label text="Salary Level"/></t:label>
-						<t:template>
-							<Text text="{salaryLevel}"/>
-						</t:template>
-					</t:Column>
-					<t:Column>
-						<t:label><Label text="Salary"/></t:label>
-						<t:template>
-							<Text text="{path: 'salary', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2} }"/>
-						</t:template>
-					</t:Column>
-					<t:Column>
-						<t:label><Label text="Department"/></t:label>
-						<t:template>
-							<Text text="{department}"/>
-						</t:template>
-					</t:Column>
-				</t:columns>
-			</t:Table>
-		</content>
-	</Panel>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.training.controller.Device_Model" xmlns:t="sap.ui.table"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Demo Device Model">
+				<content>
+					<Panel headerText="Employees" expandable="{= !${device>/system/desktop} }" expanded="{device>/system/desktop}">
+						<content>
+							<t:Table rows="{/employees}" visibleRowCount="20" selectionMode="None">
+								<t:columns>
+									<t:Column >
+										<t:label><Label text="Name"/></t:label>
+										<t:template>
+											<Text text="{name}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<t:label><Label text="Date of Birth"/></t:label>
+										<t:template>
+											<Text text="{ path: 'birthday', type: 'sap.ui.model.type.Date', formatOptions: { source: {pattern: 'yyyy/MM/dd'}, style: 'medium' }}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<t:label><Label text="Gender"/></t:label>
+										<t:template>
+											<Text text="{gender}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<t:label><Label text="Salary Level"/></t:label>
+										<t:template>
+											<Text text="{salaryLevel}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<t:label><Label text="Salary"/></t:label>
+										<t:template>
+											<Text text="{path: 'salary', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2} }"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<t:label><Label text="Department"/></t:label>
+										<t:template>
+											<Text text="{department}"/>
+										</t:template>
+									</t:Column>
+								</t:columns>
+							</t:Table>
+						</content>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
 </mvc:View>

@@ -8,6 +8,9 @@ sap.ui.define([
 	return Controller.extend("sap.training.controller.Device_Model", {
 
 		onInit: function() {
+			// apply compact density if touch is not supported, the standard cozy design otherwise
+			this.getView().addStyleClass(Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact");
+
 			// set device model
 			var oDeviceModel = new JSONModel(Device);
 			oDeviceModel.setDefaultBindingMode("OneWay");

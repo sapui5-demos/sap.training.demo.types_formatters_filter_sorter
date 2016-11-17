@@ -1,5 +1,5 @@
 <mvc:View controllerName="sap.training.controller.Expression_Binding" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons">
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	
    <!-- Set to visible, if the salaryLevel equals 3 -->
 	<core:Icon src="sap-icon://message-warning" visible="{= ${/employee/salaryLevel} === 3 }"/>
@@ -9,17 +9,17 @@
                visible="{= ${/employee/salaryLevel} === 3 &amp;&amp; ${/employee/salary} > 40000 }"/>
 	
 	<!-- Text is 'Mrs.' if the gender is 'female', otherwise 'Mr.' -->
-	<TextView text="{= ${/employee/gender} === 'female' ? 'Mrs.' : 'Mr.' }" />
+	<Text text="{= ${/employee/gender} === 'female' ? 'Mrs.' : 'Mr.' }"/>
 	
 	<!-- Set to visible, if the department equals 'Human Resources' or the salaryLevel is greater than 3 -->
 	<Button text="Save" press="onSave"
-	        visible="{= ${/employee/department} === 'Human Resources' || ${/employee/salaryLevel} > 3 }" />
+	        visible="{= ${/employee/department} === 'Human Resources' || ${/employee/salaryLevel} > 3 }"/>
   
     <!-- Set to visible, if the zipCode is valid -->
-    <TextView text="{/employee/zipCode}" visible="{= RegExp('^\\d{5}$').test(${/employee/zipCode}) }"/>
+    <Text text="{/employee/zipCode}" visible="{= RegExp('^\\d{5}$').test(${/employee/zipCode}) }"/>
     
     <!-- Text is maximum of 3 values -->
-    <TextView text="{= Math.max(${/employees/0/salary}, ${/employees/1/salary}, ${/employees/2/salary}) }" />
+    <Text text="{= Math.max(${/employees/0/salary}, ${/employees/1/salary}, ${/employees/2/salary}) }"/>
     
     <!-- Control is enabled only if the department is set -->
     <Button text="Save" press="onSave" enabled="{= ${/employee/department} !== null }"/>

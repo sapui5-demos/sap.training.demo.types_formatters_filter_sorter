@@ -1,33 +1,29 @@
-<mvc:View controllerName="sap.training.controller.Formatters" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons">
+<mvc:View controllerName="sap.training.controller.Formatters" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	
-	<TextView text="{/employee/gender}" />
+	<Text text="{/employee/gender}" />
 	
-	<TextView text="{
-	            path: '/employee/gender',
-	            formatter: '.formatter.salutation'
+	<Text text="{ path: '/employee/gender',
+	              formatter: '.formatter.salutation'
 	            }"
     />
     
-    <Image src="{
-	            path: '/employee/gender',
-	            formatter: '.formatter.genderIcon'
+    <Image src="{ path: '/employee/gender',
+	              formatter: '.formatter.genderIcon'
 	            }"
     />
     
     <html:br/>
   
-	<TextView text="{/employee/gender}" />
+	<Text text="{/employee/gender}" />
 
-	<TextView text="{
-	            path: '/employee/gender',
-	            formatter: '.salutation'
+	<Text text="{ path: '/employee/gender',
+	              formatter: '.salutation'
 	            }"
     />
   
-    <Image src="{
-	            path: '/employee/gender',
-	            formatter: '.genderIcon'
+    <Image src="{ path: '/employee/gender',
+	              formatter: '.genderIcon'
 	            }"
     />
 

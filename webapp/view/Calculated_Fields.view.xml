@@ -1,37 +1,39 @@
-<mvc:View controllerName="sap.training.controller.Calculated_Fields" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons">
+<mvc:View controllerName="sap.training.controller.Calculated_Fields" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	
-	<TextView text="Hello {/employee/firstName} {/employee/lastName}"/>
+	<Text text="Hello {/employee/firstName} {/employee/lastName}"/>
 	
 	<html:br/>
 	 
-    <TextView text="Date of Birth:
-                {path: '/employee/birthday', 
-                 type: 'sap.ui.model.type.Date',
-                 formatOptions: { source: {pattern: 'yyyy/MM/dd'}} }
-                 (Age:
-                 {path: '/employee/birthday', formatter: '.age'})
-                 "/>
+    <Text text="Date of Birth:
+                { path: '/employee/birthday', 
+                  type: 'sap.ui.model.type.Date',
+                  formatOptions: { source: {pattern: 'yyyy/MM/dd'} }
+                }
+                (Age:
+                { path: '/employee/birthday', formatter: '.age'})"
+	/>
                  
     <html:br/>
 	            
-	<TextView text="{
-	    parts: [  {path:'/employee/lastName'},
-	              {path: '/employee/birthday',
-                   type: 'sap.ui.model.type.Date',
-                   formatOptions: { source: {pattern: 'yyyy/MM/dd'}}}
-                ]
-                     }"/>    
+	<Text text="{
+	       parts: [  { path: '/employee/lastName' },
+	                 { path: '/employee/birthday',
+                       type: 'sap.ui.model.type.Date',
+                       formatOptions: { source: {pattern: 'yyyy/MM/dd'} }
+            	     }
+                  ]
+               }"
+	/>    
    
     <html:br/>
 	
-    <TextView text="{parts:[ {path:'/employee/gender'},
-                              {path:'/employee/firstName'},
-                              {path:'/employee/lastName'}
-                            ],
-                      formatter: '.greeting'
-                      }"/>   
-                    
-	<html:br/>
+    <Text text="{ parts: [ { path:'/employee/gender' },
+                           { path:'/employee/firstName' },
+                           { path:'/employee/lastName' }
+                         ],
+                  formatter: '.greeting'
+                }"
+    />   
               
 </mvc:View>
