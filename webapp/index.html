@@ -22,16 +22,18 @@
 			oModel.loadData("model/data.json");
 			sap.ui.getCore().setModel(oModel);
 				
-			var oView =	sap.ui.view({
-							id: "idMain",
+			sap.ui.require(["sap/ui/core/mvc/View"], function(View) {
+				View.create({
+								  id: "idMain",
 							viewName: "sap.training.view.Datatypes",
-							type: sap.ui.core.mvc.ViewType.XML
-						});
+								type: sap.ui.core.mvc.ViewType.XML
+					}).then(function(oView) {
+						oView.placeAt("content");
 						
-			// Register the view with the message manager
-			// sap.ui.getCore().getMessageManager().registerObject(oView, true);
-			
-			oView.placeAt("content");
+						// Register the view with the message manager
+						// sap.ui.getCore().getMessageManager().registerObject(oView, true);
+				});
+			});
 		</script>
 	</head>
 
