@@ -9,11 +9,6 @@ sap.ui.define([
 
 		formatter: formatter,
 
-		onInit: function() {
-			// apply compact density if touch is not supported, the standard cozy design otherwise
-			this.getView().addStyleClass(Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact");
-		},
-
 		salutation: function(sGender) {
 			return sGender === "female" ? "Mrs." : "Mr.";
 		},

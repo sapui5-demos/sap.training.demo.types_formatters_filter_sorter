@@ -1,5 +1,5 @@
 <mvc:View controllerName="sap.training.controller.Calculated_Fields" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" class="sapUiSizeCompact">
 	
 	<Text text="Hello {/employee/firstName} {/employee/lastName}"/>
 	

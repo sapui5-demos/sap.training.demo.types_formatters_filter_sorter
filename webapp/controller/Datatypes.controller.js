@@ -8,10 +8,6 @@ sap.ui.define([
 	return Controller.extend("sap.training.controller.Datatypes", {
 
 		onInit: function() {
-
-			// apply compact density if touch is not supported, the standard cozy design otherwise
-			this.getView().addStyleClass(Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact");
-
 			// var oCore = sap.ui.getCore();
 
 			// oCore.attachParseError(this.onError);
@@ -34,7 +30,7 @@ sap.ui.define([
 		},
 
 		onInputError: function(oEvent) {
-			oEvent.oSource.setValueState(sap.ui.core.ValueState.Error);
+			oEvent.getParameter("element").setValueState(sap.ui.core.ValueState.Error);
 
 			var oException = oEvent.getParameter("exception");
 			var oText = this.getView().byId("idMessageText");
@@ -44,7 +40,7 @@ sap.ui.define([
 		},
 
 		onValidationSuccess: function(oEvent) {
-			oEvent.oSource.setValueState(sap.ui.core.ValueState.None);
+			oEvent.getParameter("element").setValueState(sap.ui.core.ValueState.None);
 
 			var oText = this.getView().byId("idMessageText");
 			oText.setText("");

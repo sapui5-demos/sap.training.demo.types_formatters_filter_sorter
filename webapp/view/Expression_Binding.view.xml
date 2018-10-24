@@ -1,5 +1,5 @@
 <mvc:View controllerName="sap.training.controller.Expression_Binding" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" class="sapUiSizeCompact">
 	
    <!-- Set to visible, if the salaryLevel equals 3 -->
 	<core:Icon src="sap-icon://message-warning" visible="{= ${/employee/salaryLevel} === 3 }"/>

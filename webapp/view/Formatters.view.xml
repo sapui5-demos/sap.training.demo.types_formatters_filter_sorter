@@ -1,5 +1,5 @@
 <mvc:View controllerName="sap.training.controller.Formatters" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" class="sapUiSizeCompact">
 	
 	<Text text="{/employee/gender}" />
 	

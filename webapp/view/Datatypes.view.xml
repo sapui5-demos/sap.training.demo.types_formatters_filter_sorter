@@ -1,7 +1,7 @@
 <mvc:View controllerName="sap.training.controller.Datatypes" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+	xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m" class="sapUiSizeCompact">
 	
-	<f:SimpleForm>
+	<f:SimpleForm editable="true">
 	    <f:title>
 	        <core:Title text="Company Data" />
 	    </f:title>
@@ -15,7 +15,7 @@
                           }"
             />
             
-			<!--            
+		    <!-- 
             <Input id="idNumOfEmployeesInput"
                    value="{ path: '/company/numOfEmployees',
                             type: 'sap.ui.model.type.Integer',
@@ -28,11 +28,12 @@
             />
             <Text  id="idMessageText" text="" class="myMessageText"/>
             -->
+        
 	       
 	   </f:content>
 	</f:SimpleForm>
 	 
-	<f:SimpleForm>
+	<f:SimpleForm editable="true">
 	    <f:title>
 	        <core:Title text="Employee Data" />
 	    </f:title>

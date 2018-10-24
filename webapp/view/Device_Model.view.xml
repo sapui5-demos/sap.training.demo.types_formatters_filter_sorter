@@ -1,5 +1,5 @@
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.training.controller.Device_Model" xmlns:t="sap.ui.table"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:html="http://www.w3.org/1999/xhtml" class="sapUiSizeCompact">
 	<App>
 		<pages>
 			<Page title="Demo Device Model">

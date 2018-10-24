@@ -6,13 +6,8 @@ sap.ui.define([
 
 	return Controller.extend("sap.training.controller.Sorter_and_Filters", {
 
-		onInit: function() {
-			// apply compact density if touch is not supported, the standard cozy design otherwise
-			this.getView().addStyleClass(Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact");
-		},
-
 		onSelectionChange: function(oEvent) {
-			var sSalaryLevel = oEvent.oSource.getSelectedKey();
+			var sSalaryLevel = oEvent.getSource().getSelectedKey();
 			var oFilter = new sap.ui.model.Filter(
 				"salaryLevel",
 				sap.ui.model.FilterOperator.EQ,

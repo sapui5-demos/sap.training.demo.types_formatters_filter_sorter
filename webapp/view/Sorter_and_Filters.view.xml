@@ -1,70 +1,76 @@
-<mvc:View controllerName="sap.training.controller.Sorter_and_Filters" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" xmlns="sap.m">
+<mvc:View controllerName="sap.training.controller.Sorter_and_Filters" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" xmlns="sap.m" class="sapUiSizeCompact">
 	
-	<f:SimpleForm layout="ResponsiveGridLayout" >
-		<f:content>
-			<Label text="Salary Level" for="idComboBox"/>
-			<ComboBox id="idComboBox" selectionChange="onSelectionChange">
-	    		<items>
-				    <core:Item key="1" text="1"/>
-				    <core:Item key="2" text="2"/>	
-				    <core:Item key="3" text="3"/>
-				    <core:Item key="4" text="4"/>
-				    <core:Item key="5" text="5"/>
-	    		</items> 
-			</ComboBox>
-    	    <Button text="Remove Filter" press="onRemoveFilter"/>
-    	  
-    	    <Label text="Sorting"/>
-    	    <Button text="Sort Ascending by Salary" press="onSort" />
-    	    <Button text="Remove Sorting" press="onRemoveSort" />
-		</f:content>
-	</f:SimpleForm>
-	
-    <t:Table id="idTable" title="Employees" visibleRowCount="20" selectionMode="None"
-             rows="{ path: '/employees',
-	                 filters: [ {path: 'salaryLevel', operator: 'EQ', value1: '3'} ],
-	                 sorter:[ {path: 'gender', descending: false}, {path: 'birthday', descending: false} ]
-	               }"
-    >
-		<t:columns> 
-    	    <t:Column>
-			    <t:label><Label text="Name"/></t:label>
-        		<t:template>
-        		   <Text text="{name}"/> 
-        		</t:template>
-			</t:Column>
-			<t:Column>
-			    <t:label><Label text="Date of Birth"/></t:label>
-        		<t:template>
-        		     <Text text="{ path: 'birthday', type: 'sap.ui.model.type.Date', formatOptions: { source: {pattern: 'yyyy/MM/dd'}, style: 'medium' } }"/>
-        		</t:template> 
-			</t:Column>
-			<t:Column>
-			    <t:label><Label text="Gender"/></t:label>
-        		<t:template>
-        		    <Text text="{gender}"/>
-        		</t:template> 
-			</t:Column>
-			<t:Column>
-			    <t:label><Label text="Salary Level"/></t:label>
-        		<t:template>
-        		   <Text text="{salaryLevel}"/>
-        		</t:template> 
-			</t:Column>
-			<t:Column>
-			    <t:label><Label text="Salary"/></t:label>
-        		<t:template>
-        		   <Text text="{path: 'salary', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2} }"/>
-        		</t:template> 
-			</t:Column>
-			<t:Column>
-			    <t:label><Label text="Department"/></t:label>
-        		<t:template>
-        		   <Text text="{department}"/>
-        		</t:template> 
-			</t:Column>
-		</t:columns>
-    </t:Table>
+	<l:VerticalLayout>
+		<l:content>
+
+			<f:SimpleForm layout="ResponsiveGridLayout" editable="true">
+				<f:content>
+					<Label text="Salary Level" labelFor="idComboBox"/>
+					<ComboBox id="idComboBox" selectionChange="onSelectionChange">
+			    		<items>
+						    <core:Item key="1" text="1"/>
+						    <core:Item key="2" text="2"/>	
+						    <core:Item key="3" text="3"/>
+						    <core:Item key="4" text="4"/>
+						    <core:Item key="5" text="5"/>
+			    		</items> 
+					</ComboBox>
+		    	    <Button text="Remove Filter" press="onRemoveFilter"/>
+		    	  
+		    	    <Label text="Sorting"/>
+		    	    <Button text="Sort Ascending by Salary" press="onSort" />
+		    	    <Button text="Remove Sorting" press="onRemoveSort" />
+				</f:content>
+			</f:SimpleForm>
+			
+		    <t:Table id="idTable" title="Employees" visibleRowCount="20" selectionMode="None"
+		             rows="{ path: '/employees',
+			                 filters: [ {path: 'salaryLevel', operator: 'EQ', value1: '3'} ],
+			                 sorter:[ {path: 'gender', descending: false}, {path: 'birthday', descending: false} ]
+			               }"
+		    >
+				<t:columns> 
+		    	    <t:Column>
+					    <t:label><Label text="Name"/></t:label>
+		        		<t:template>
+		        		   <Text text="{name}"/> 
+		        		</t:template>
+					</t:Column>
+					<t:Column>
+					    <t:label><Label text="Date of Birth"/></t:label>
+		        		<t:template>
+		        		     <Text text="{ path: 'birthday', type: 'sap.ui.model.type.Date', formatOptions: { source: {pattern: 'yyyy/MM/dd'}, style: 'medium' } }"/>
+		        		</t:template> 
+					</t:Column>
+					<t:Column>
+					    <t:label><Label text="Gender"/></t:label>
+		        		<t:template>
+		        		    <Text text="{gender}"/>
+		        		</t:template> 
+					</t:Column>
+					<t:Column>
+					    <t:label><Label text="Salary Level"/></t:label>
+		        		<t:template>
+		        		   <Text text="{salaryLevel}"/>
+		        		</t:template> 
+					</t:Column>
+					<t:Column>
+					    <t:label><Label text="Salary"/></t:label>
+		        		<t:template>
+		        		   <Text text="{path: 'salary', type: 'sap.ui.model.type.Float', formatOptions: {minFractionDigits: 2, maxFractionDigits: 2} }"/>
+		        		</t:template> 
+					</t:Column>
+					<t:Column>
+					    <t:label><Label text="Department"/></t:label>
+		        		<t:template>
+		        		   <Text text="{department}"/>
+		        		</t:template> 
+					</t:Column>
+				</t:columns>
+		    </t:Table>
+    
+    	</l:content>
+	</l:VerticalLayout>
   
 </mvc:View>

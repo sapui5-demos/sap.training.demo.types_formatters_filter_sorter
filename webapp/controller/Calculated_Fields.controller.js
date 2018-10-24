@@ -6,12 +6,6 @@ sap.ui.define([
 
 	return Controller.extend("sap.training.controller.Calculated_Fields", {
 
-		onInit: function() {
-			// apply compact density if touch is not supported, the standard cozy design otherwise
-			this.getView().addStyleClass(Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact");
-		},
-
-
 		greeting: function(sGender, sFirstName, sLastName) {
 			var sSalutation = (sGender === "female") ? "Mrs." : "Mr.";
 			return "Hello " + sSalutation + " " + sFirstName + " " + sLastName;

@@ -6,11 +6,6 @@ sap.ui.define([
 
 	return Controller.extend("sap.training.controller.Message_Manager", {
 
-		onInit: function() {
-			// apply compact density if touch is not supported, the standard cozy design otherwise
-			this.getView().addStyleClass(Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact");
-		}
-
 	});
 
 });
