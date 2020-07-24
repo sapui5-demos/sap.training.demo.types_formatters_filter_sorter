@@ -76,7 +76,21 @@
                    value="{ path: '/employee/zipCode',
                             type: 'sap.training.type.ZipCode'
                           }"
-            />     
+            />
+             
+            <!--As of SAPUI5 1.69 modules can be required in XML views and fragments and assigned to aliases-->
+            <!--which can be used as variables in properties, event handlers, and bindings.-->
+            <!--Such a declarative approach can help to avoid global variables-->
+            <!--and allows to reuse certain helper classes without a detour via Controller code.-->
+            <!--
+            <Input id="idZipCodeInput2"
+            	   core:require="{ZipCode: 'sap/training/type/ZipCode'}"
+                   value="{ path: '/employee/zipCode',
+                            type: 'sap.training.type.ZipCode'
+                          }"
+            />
+            -->
+            
 	   </f:content>
 	</f:SimpleForm>
 	
