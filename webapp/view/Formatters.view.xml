@@ -1,30 +1,31 @@
-<mvc:View controllerName="sap.training.controller.Formatters" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" class="sapUiSizeCompact">
+<mvc:View controllerName="sap.training.controller.Formatters" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" class="sapUiSizeCompact">
 	
-	<Text text="{/employee/gender}" />
+	<Text text="{/employee/gender}"/>
+	<Text text="{ path: '/employee/gender', formatter: '.formatter.salutation' }"/>
+	<Image src="{ path: '/employee/gender', formatter: '.formatter.genderIcon' }"/>
 	
-	<Text text="{ path: '/employee/gender',
-	              formatter: '.formatter.salutation'
-	            }"
-    />
-    
-    <Image src="{ path: '/employee/gender',
-	              formatter: '.formatter.genderIcon'
-	            }"
-    />
-    
-    <html:br/>
-  
-	<Text text="{/employee/gender}" />
-
-	<Text text="{ path: '/employee/gender',
-	              formatter: '.salutation'
-	            }"
-    />
-  
-    <Image src="{ path: '/employee/gender',
-	              formatter: '.genderIcon'
-	            }"
-    />
-
+	<html:br/>
+	
+	<Text text="{/employee/gender}"/>
+	<Text text="{ path: '/employee/gender', formatter: '.salutation' }"/>
+	<Image src="{ path: '/employee/gender', formatter: '.genderIcon' }"/>
+	
 </mvc:View>
+
+
+
+<!--As of SAPUI5 1.69 modules can be required in XML views and fragments and assigned to aliases-->
+<!--which can be used as variables in properties, event handlers, and bindings.-->
+<!--Such a declarative approach can help to avoid global variables-->
+<!--and allows to reuse certain helper classes without a detour via Controller code.-->
+<!--
+<mvc:View controllerName="sap.training.controller.Formatters" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:core="sap.ui.core" core:require="{formatter2: 'sap/training/util/formatter'}" class="sapUiSizeCompact">
+	
+	<Text text="{/employee/gender}"/>
+	<Text text="{ path: '/employee/gender', formatter: 'formatter2.salutation' }"/>
+	<Image src="{ path: '/employee/gender', formatter: 'formatter2.genderIcon' }"/>
+	
+</mvc:View>
+-->
