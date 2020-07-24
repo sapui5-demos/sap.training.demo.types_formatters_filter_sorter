@@ -8,33 +8,41 @@
 		<title>Demo Types, Formatters, Filter and Sorter</title>
 
 		<script id="sap-ui-bootstrap"
-			src="https://sapui5.hana.ondemand.com/1.58.4/resources/sap-ui-core.js"
+			src="resources/sap-ui-core.js"
 			data-sap-ui-libs="sap.m, sap.ui.table"
-			data-sap-ui-theme="sap_belize"
+			data-sap-ui-theme="sap_fiori_3"
 			data-sap-ui-compatVersion="edge"
-			data-sap-ui-resourceroots='{"sap.training": ""}'>
+			data-sap-ui-resourceroots='{"sap.training": ""}'
+			data-sap-ui-async="true">
 		</script>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script>
-			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("model/data.json");
-			sap.ui.getCore().setModel(oModel);
-				
-			sap.ui.require(["sap/ui/core/mvc/View"], function(View) {
-				View.create({
-								  id: "idMain",
-							viewName: "sap.training.view.Datatypes",
-								type: sap.ui.core.mvc.ViewType.XML
-					}).then(function(oView) {
-						oView.placeAt("content");
-						
-						// Register the view with the message manager
-						// sap.ui.getCore().getMessageManager().registerObject(oView, true);
+			sap.ui.getCore().attachInit(function() {
+			
+				sap.ui.require(["sap/ui/core/mvc/View", "sap/ui/model/json/JSONModel"], function(View, JSONModel) {
+					
+					var oModel = new JSONModel();
+					oModel.loadData("model/data.json");
+					sap.ui.getCore().setModel(oModel);
+					
+					View.create({
+									  id: "idMain",
+								viewName: "sap.training.view.Datatypes",
+									type: sap.ui.core.mvc.ViewType.XML
+						}).then(function(oView) {
+							oView.placeAt("content");
+							
+							// Register the view with the message manager
+							// sap.ui.getCore().getMessageManager().registerObject(oView, true);
+					});
 				});
+			
 			});
 		</script>
+		
+		
 	</head>
 
 	<body class="sapUiBody" id="content">
